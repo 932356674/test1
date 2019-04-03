@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.min.js"></script>
+    <style>
+        .class1{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="app">
+        <!--
+            v-mode:使用最多，双向绑定
+            msg值绑定给传输框
+            输入框的值又能绑定给msg
+        -->
+        <input type="text" v-model="msg"/>{{msg}}
+
+        <hr>
+        <input type="checkbox" v-model="flag"/>
+        <div v-bind:class="{'class1':flag}">
+            测试v-model和v-bind指令
+        </div>
+    </div>
+<script>
+    var vue = new Vue({
+        el:"#app",
+        data:{
+            msg:"Hello Vue!",
+            flag:false
+        }
+    })
+</script>
+
+</body>
+</html>
